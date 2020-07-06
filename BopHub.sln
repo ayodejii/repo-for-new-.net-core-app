@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BopHub", "BopHub\BopHub.csproj", "{9D5A7823-B45E-4BBE-AA4E-992D073AED42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BopHubData", "BopHubData\BopHubData.csproj", "{5BFB3F26-33EA-4546-8848-89C8113D23AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BopHubService", "BopHubService\BopHubService.csproj", "{C17791B1-A13F-4763-B2B7-98BE4103DFAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D5A7823-B45E-4BBE-AA4E-992D073AED42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D5A7823-B45E-4BBE-AA4E-992D073AED42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D5A7823-B45E-4BBE-AA4E-992D073AED42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D5A7823-B45E-4BBE-AA4E-992D073AED42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BFB3F26-33EA-4546-8848-89C8113D23AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFB3F26-33EA-4546-8848-89C8113D23AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFB3F26-33EA-4546-8848-89C8113D23AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFB3F26-33EA-4546-8848-89C8113D23AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C17791B1-A13F-4763-B2B7-98BE4103DFAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C17791B1-A13F-4763-B2B7-98BE4103DFAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C17791B1-A13F-4763-B2B7-98BE4103DFAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C17791B1-A13F-4763-B2B7-98BE4103DFAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D908D45-BA9C-4349-AF64-5BB85BB4716B}
+	EndGlobalSection
+EndGlobal

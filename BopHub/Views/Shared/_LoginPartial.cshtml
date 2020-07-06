@@ -1,0 +1,35 @@
+﻿@*@model  BopHub.Models.Account.AccountViewModel*@
+    <ul class="navbar-nav">
+        @*@if (Model.BopModel. == false)
+        {*@
+        <li class="nav-item">
+            <a id="manage" class="nav-link text-dark" title="Manage">@*Hello @Model.Username!*@</a>
+        </li>
+        <li class="dropdown">
+            <a class="btn btn-info dropdown-toggle text-dark" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                user@user.com
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Bops I'm Listening To</a>
+                <a class="dropdown-item" href="#">Artistes I'm Following</a>
+                <a class="dropdown-item" href="#">Log out</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            @*<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Accounts/Logout" asp-route-returnUrl="@Url.Action("Index", "Accounts")">
+                <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            </form>*@
+            <a asp-controller="Accounts" asp-action="Index"></a>
+        </li>
+        @*}
+        else
+        {*@
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" id="login" asp-action="Index" asp-controller="Accounts">Login</a>
+        </li>
+        @*}*@
+    </ul>

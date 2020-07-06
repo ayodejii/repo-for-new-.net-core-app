@@ -1,0 +1,43 @@
+﻿@model BopHub.Models.Bops.BopsDetailModel
+
+@{
+    ViewData["Title"] = "Create Bops";
+}
+
+<h2>Add a Bop</h2>
+<p class="alert alert-info">All fields are <strong>required</strong></p>
+<form method="post">
+    @Html.AntiForgeryToken()
+    <div class="col-md-3">
+        <div asp-validation-summary="@ValidationSummary.ModelOnly"></div>
+        <input type="hidden" id="artiste" class="form-control" asp-for="@Model.BopId" />
+        <div class="form-group">
+            <label asp-for="@Model.Artiste"></label>
+            <input type="text" autofocus="autofocus" id="artiste" class="form-control" asp-for="@Model.Artiste" />
+            <span asp-validation-for="@Model.Artiste"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.BopName"></label>
+            <input type="text" id="bopName" class="form-control" asp-for="@Model.BopName" />
+            <span asp-validation-for="@Model.BopName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.ReleaseDate">Release Date</label>
+            <input type="text" id="releaseDate" class="form-control" asp-for="@Model.ReleaseDate" placeholder="01 01 2020" />
+            <span asp-validation-for="@Model.ReleaseDate"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.ReleaseTime">Release Time</label>
+            <input type="text" id="releaseTime" class="form-control" asp-for="@Model.ReleaseTime" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Genre">Genre</label>
+            <select asp-for="@Model.Genre" class="form-control" asp-items="@(new SelectList(@Model.Genres, "Id", "Name"))">
+                <option value=""></option>
+            </select>
+            <span asp-validation-for="@Model.Genre"></span>
+        </div>
+        <button type="submit" class="btn btn-secondary" asp-action="Create" asp-controller="Bops">Create Bop</button>
+    </div>
+
+</form>

@@ -1,0 +1,25 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model BopHub.Models.Bops.BopsListingModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <ul class="gigs">
+        @foreach (var bops in Model.BopsDetailsList)
+        {
+           <li>
+               <div class="date">
+                   <div class="month">@Convert.ToDateTime(bops.ReleaseDate).ToString("MMM")</div>
+                   <div class="day">@Convert.ToDateTime(bops.ReleaseDate).ToString("d ")</div>
+               </div>
+               <div class="details">
+                   <div class="artiste">@bops.Artiste</div>
+                   <div class="venue">@bops.ReleaseVenue</div>
+               </div>
+           </li>
+        }
+
+    </ul>
