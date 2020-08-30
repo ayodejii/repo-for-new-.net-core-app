@@ -1,7 +1,9 @@
 ﻿using BopHub.Models.Account;
 using BopHubData.Model;
 using BopHubData.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,9 +33,9 @@ namespace BopHub.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromForm] AccountViewModel account)
+        public async Task<IActionResult> Login([FromForm] AccountViewModel account)
         {
-            var accounts = repository.Find(x => x.Username == account.Username && x.Password == account.Password);
+            var accounts = await repository.Find(x => x.Username == account.Username && x.Password == account.Password);
             if (accounts is null)
                 return RedirectToAction("Index");
             var model = new AccountViewModel()
@@ -43,6 +45,7 @@ namespace BopHub.Controllers
                 isUserLoggedIn = true
             };
             //saves the account in session 
+            HttpContext.Session.SetInt32("user", accounts.Id);
             return RedirectToAction("Index", "Home");
         }
 

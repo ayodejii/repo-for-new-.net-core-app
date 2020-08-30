@@ -39,10 +39,19 @@ namespace BopHub
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<BopDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BopDBConnection")));
-            
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(40);
+                //options.Cookie.HttpOnly = true;
+                //options.Cookie.IsEssential = true;
+            });
+
             services.AddScoped<IRepository<Genre>, RepositoryService<Genre>>();
             services.AddScoped<IRepository<Account>, RepositoryService<Account>>();
             services.AddScoped<IRepository<Bop>, RepositoryService<Bop>>();
+            services.AddScoped<IRepository<Attendance>, RepositoryService<Attendance>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +72,7 @@ namespace BopHub
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
